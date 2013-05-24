@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Q.U.A.S.T. LinQo!</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Language" content="nl-NL" />
+		
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery.scripts.js" type="text/javascript"></script>
+	<script src="js/data.js" type="text/javascript"></script>
+	
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+
+	<div id="container">
+		
+		<div id="homecontainer" class="screencontainer">
+			<div id="btnStart" class="homebutton">Start</div>
+			<div id="btnTune" class="homebutton">Tune</div>
+			<div id="btnReset" class="homebutton">Reset</div>
+			<div id="homeSetup">			
+				<div id="homeGames">
+					Game: <select id="selGame"></select>
+				</div>
+				<div id="homeTeams">
+					<div id="homeTeam1" class="homeTeam">
+						Team 1:
+						<select id="selTeam1"></select>
+					</div>
+					<div id="homeTeam2" class="homeTeam">
+						Team 2:
+						<select id="selTeam2"></select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="typeContainer">
+			<input type="text" id="spellingBox" />
+		</div>
+		
+		<div id="navcontainer">
+			<div id="navHome" class="navbutton">Home</div>
+			<div id="navChart1" class="navbutton">Team 1</div>
+			<div id="navChart2" class="navbutton">Team 2</div>
+			<div id="navWords" class="navbutton">Word</div>
+		</div>
+				
+		<div id="scorecontainer">
+			<div id="teamname1" class="teamname"></div>
+			<div id="score1" class="score"></div>
+			<div id="teamname2" class="teamname"></div>
+			<div id="score2" class="score"></div>
+		</div>
+		
+		<div id="controlcontainer">
+			<div id="ctrlGame">0</div>
+			<div id="ctrlWord">0</div>	
+			<div id="ctrlAttempt">0</div>
+			<div id="ctrlStartWord">Start Word</div>			
+		</div>
+		
+		<div id="chartcontainer1" class="screencontainer chartcontainer">
+			<div class="numbers">
+				<div class="number number1">1</div>
+				<div class="number number3">3</div>
+				<div class="number number5">5</div>
+				<div class="number number7">7</div>
+				
+				<div class="number number9">9</div>
+				<div class="number number11">11</div>
+				<div class="number number13">13</div>
+				<div class="number number15">15</div>
+
+				<div class="number number17">17</div>				
+				<div class="number number19">19</div>
+				<div class="number number21">21</div>
+				<div class="number number23">23</div>
+				
+				<div class="number number25">25</div>
+				<div class="number number27">27</div>
+				<div class="number number29">29</div>
+				<div class="number number31">31</div>
+			</div>
+		</div>
+		
+		<div id="chartcontainer2" class="screencontainer chartcontainer">
+			<div class="numbers">
+				<div class="number number2">2</div>
+				<div class="number number4">4</div>
+				<div class="number number6">6</div>
+				<div class="number number8">8</div>
+				
+				<div class="number number10">10</div>
+				<div class="number number12">12</div>
+				<div class="number number14">14</div>
+				<div class="number number16">16</div>
+
+				<div class="number number18">18</div>				
+				<div class="number number20">20</div>
+				<div class="number number22">22</div>
+				<div class="number number24">24</div>
+				
+				<div class="number number26">26</div>
+				<div class="number number28">28</div>
+				<div class="number number30">30</div>
+				<div class="number number32">32</div>
+			</div>
+		</div>		
+
+		
+		<div id="wordcontainer" class="screencontainer">
+			<div id="wordTeam"></div>
+			<div id="words">
+				<div class="word word1">
+					<div class="letter letter0"></div>
+					<div class="letter letter1"></div>
+					<div class="letter letter2"></div>
+					<div class="letter letter3"></div>
+					<div class="letter letter4"></div>
+					<div class="letter letter5"></div>
+					<div class="letter letter6"></div>
+				</div>
+				<div class="word word2">
+					<div class="letter letter0"></div>
+					<div class="letter letter1"></div>
+					<div class="letter letter2"></div>
+					<div class="letter letter3"></div>
+					<div class="letter letter4"></div>
+					<div class="letter letter5"></div>
+					<div class="letter letter6"></div>
+				</div>
+				<div class="word word3">
+					<div class="letter letter0"></div>
+					<div class="letter letter1"></div>
+					<div class="letter letter2"></div>
+					<div class="letter letter3"></div>
+					<div class="letter letter4"></div>
+					<div class="letter letter5"></div>
+					<div class="letter letter6"></div>
+				</div>
+				<div class="word word4">
+					<div class="letter letter0"></div>
+					<div class="letter letter1"></div>
+					<div class="letter letter2"></div>
+					<div class="letter letter3"></div>
+					<div class="letter letter4"></div>
+					<div class="letter letter5"></div>
+					<div class="letter letter6"></div>
+				</div>
+				<div class="word word5">
+					<div class="letter letter0"></div>
+					<div class="letter letter1"></div>
+					<div class="letter letter2"></div>
+					<div class="letter letter3"></div>
+					<div class="letter letter4"></div>
+					<div class="letter letter5"></div>
+					<div class="letter letter6"></div>
+				</div>
+				<div class="word word6">
+					<div class="letter letter0"></div>
+					<div class="letter letter1"></div>
+					<div class="letter letter2"></div>
+					<div class="letter letter3"></div>
+					<div class="letter letter4"></div>
+					<div class="letter letter5"></div>
+					<div class="letter letter6"></div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+	<div id="dummy"></div>
+
+</body>
+</html>

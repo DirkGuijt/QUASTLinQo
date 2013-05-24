@@ -1,0 +1,288 @@
+*
+{
+	padding: 0px;
+	margin: 0px;
+	font-family: Tahoma;
+	font-weight: bold;
+}
+
+body, html {
+	overflow: hidden;
+}
+
+#container
+{
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	
+	background-image: url(../img/background.png);
+}
+
+
+.screencontainer
+{
+	display: none;
+	
+	position: absolute;
+	left: 40px;
+	top: 123px;
+	
+	width: 800px;
+	height: 600px;
+}
+
+#navcontainer {
+
+	position: absolute;
+	left: 40px;
+	top: 30px;
+	
+	width: 800px;
+	height: 68px;	
+}
+
+#scorecontainer {
+
+	position: absolute;
+	left: 865px;
+	top: 123px;
+	
+	width: 134px;
+	height: 300px;
+	
+}
+
+#controlcontainer {
+
+	position: absolute;
+	left: 865px;
+	top: 448px;
+	
+	width: 134px;
+	height: 200px;
+	
+}
+
+
+#timer {
+	position: absolute;
+	left: 858px;
+	top: 592px;
+	
+	width: 134px;
+	height: 200px;
+	
+	text-align: center;
+	font-weight: bold;
+	font-size: 53px;
+}
+
+#ctrlStartWord {
+	width: 134px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#typeContainer {
+	
+	position: absolute;
+	left: 865px;
+	top: 30px;
+	
+	width: 134px;
+	height: 68px;
+}
+
+#spellingBox {
+	width: 130px;
+	font-size: 53px;
+	
+	border: 0px;
+	background-color: transparent;
+	color: rgba(0, 0, 0, 0.2);
+	outline: 0;
+}
+
+#navHome {
+	position: absolute;
+	right: 200px;
+	top: 7px;
+
+	width: 150px;
+	border: 2px dotted #656565;
+}
+#navWords {
+	position: absolute;
+	right: 200px;
+	top: 38px;
+
+	width: 150px;
+	border: 2px dotted #656565;
+}
+#navChart1 {
+	position: absolute;
+	right: 25px;
+	top: 7px;
+
+	width: 150px;
+	border: 2px dotted #656565;
+}
+#navChart2{
+	position: absolute;
+	right: 25px;
+	top: 38px;
+
+	width: 150px;
+	border: 2px dotted #656565;
+}
+
+#btnStart {
+	position: absolute;
+	left: 160px;
+	top: 265px;
+
+	width: 180px;
+	padding: 25px;
+	border: 2px dotted #656565;
+	
+	text-align: center;
+}
+
+#btnTune {
+	position: absolute;
+	left: 425px;
+	top: 115px;
+
+	width: 180px;
+	height: 65px;
+	padding: 25px;
+	border: 2px dotted #656565;
+	
+	text-align: center;
+}
+
+#homeSetup {
+	position: absolute;
+	left: 160px;
+	top: 115px;
+
+	width: 180px;
+	padding: 25px;
+	border: 2px dotted #656565;
+	
+	text-align: center;
+}
+
+#btnReset {
+	position: absolute;
+	left: 425px;
+	top: 265px;
+
+	width: 180px;
+	padding: 25px;
+	border: 2px dotted #656565;
+	
+	text-align: center;
+}
+
+#teamname1 {
+	position: absolute;
+	left: 0px;
+	top: 53px;
+	
+	width: 134px;
+	text-align: center;
+}
+#score1 {
+	position: absolute;
+	left: 0px;
+	top: 75px;
+	
+	width: 134px;
+	text-align: center;
+	font-size: 28px;
+}
+#teamname2 {
+	position: absolute;
+	left: 0px;
+	top: 153px;
+	
+	width: 134px;
+	text-align: center;
+}
+#score2 {
+	position: absolute;
+	left: 0px;
+	top: 175px;
+	
+	width: 134px;
+	text-align: center;
+	font-size: 28px;
+}
+
+.numbers {
+	margin-left: 100px;
+}
+
+.number  {
+	
+width: 144px;
+height: 114px;
+border: 1px solid #555555;
+float: left;
+margin: 2px;
+background-color: #ffffff;
+font-size: 65px !important;
+padding-top: 30px;
+	
+}
+
+#words {
+	margin-left: 50px;
+}
+
+.word6 {
+	display: none;
+}
+.letter  {
+	
+width: 94px;
+height: 88px;
+border: 1px solid #444444;
+float: left;
+margin: 2px;
+font-size: 53px !important;
+padding-top: 6px;
+
+	
+}
+
+.number,
+.letter {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#ctrlGame,
+#ctrlWord,
+#ctrlAttempt {
+	display: none;
+}
+
+#btnStart,
+#btnReset,
+#ctrlStartWord,
+#navHome,
+#navChart1,
+#navChart2,
+#navWords,
+.number,
+#btnTune {
+	cursor: pointer;
+}
