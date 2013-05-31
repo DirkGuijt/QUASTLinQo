@@ -27,18 +27,20 @@ $(document).ready(function () {
 	
 });
 
-function playSound(soundfile) {
-	document.getElementById("dummy").innerHTML=
-		"<embed src=\"sound/"+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+function playSound(soundfile, callback) {
+	$("#dummy").html("").append(
+		$("<audio></audio>").attr('src', 'sound/'+soundfile).css('visibility', 'hidden').attr('autoplay', '1')
+		.bind("ended", callback)
+	);
  }
 
-function setLetterCorrect(selector) {
-	playSound("lingo_beep.mp3");
+function setLetterCorrect(selector, c) {
+	playSound("lingo_beep.mp3", c);
 	$(selector).css("background-color", "rgb(2, 241, 2)");
 }
 
-function setLetterInWord(selector) {
-	playSound("lingo_beep_verkeerd.mp3");
+function setLetterInWord(selector, c) {
+	playSound("lingo_beep_verkeerd.mp3", c);
 	$(selector).css("background-color", "#ffff00");
 }
 
@@ -46,9 +48,9 @@ function resetLetter(selector) {
 	$(selector).css("background-color", "#FFFFFF");
 }
 
-function setNumberActive(selector) {
+function setNumberActive(selector, c) {
 	$(selector).css("background-color", "#ffff00");
-	playSound('Lingo_Bal.mp3');
+	playSound('Lingo_Bal.mp3', c);
 }
 
 function setNumberInActive(selector) {
@@ -245,45 +247,42 @@ function doAttempt(attemptWord) {
 			}
 		}
 		
-		for (var i = 0; i < attemptWord.length; i++) {
-			(function(i){
-				setTimeout(function(){
-			
-					var selector = ".word" + active.attempt + " .letter" + i;
-					if (attemptWord.charAt(i) == wordToGuess.charAt(i)) {
-						setLetterCorrect(selector);
-						active.guess = replaceAt(active.guess, attemptWord.charAt(i), i);
-					} else if (containsLetter.indexOf(attemptWord.charAt(i)) !== -1) {
-						setLetterInWord(selector);
-						containsLetter = replaceAt(containsLetter, ".", containsLetter.indexOf(attemptWord.charAt(i)));
-					} else {
-						playSound("lingo_beep_niks.mp3");
-					}
-				
-				}, 250 * i);
-			}(i));
-			
-		}
-	}
-	
-	(function(i){
-		setTimeout(function(){
-			
-			$("#spellingBox").val("").focus();
-			if (attemptWord == wordToGuess) {
-				guessedWord();
-				playSound("lingo_goed.mp3");
-			} else if (active.attempt == 5) {
-				playSound("lingo_fout.mp3");
-				setTimeout("notGuessedWord()", 2000);
-			} else {
-				active.attempt++;
-				prepareWordLine();
+		var stack = attemptWord.split("");
+		function step(){
+			letter = stack.shift();
+			var i = wordToGuess.length - stack.length - 1;
+			if(letter)
+			{
+				var selector = ".word" + active.attempt + " .letter" + i;
+				if (letter == wordToGuess.charAt(i)) {
+					setLetterCorrect(selector, step);
+					active.guess = replaceAt(active.guess, letter, i);
+				} else if (containsLetter.indexOf(letter) !== -1) {
+					setLetterInWord(selector, step);
+					containsLetter = replaceAt(containsLetter, ".", containsLetter.indexOf(letter));
+				} else {
+					playSound("lingo_beep_niks.mp3", step);
+				}
+				i++;
 			}
-			$("#spellingBox").val("").focus();
-			
-		}, 250 * attemptWord.length);
-	}(i));
+			else
+			{
+				$("#spellingBox").val("").focus();
+				if (attemptWord == wordToGuess) {
+					guessedWord();
+					playSound("lingo_goed.mp3");
+				} else if (active.attempt == 5) {
+					playSound("lingo_fout.mp3");
+					setTimeout("notGuessedWord()", 2000);
+				} else {
+					active.attempt++;
+					prepareWordLine();
+				}
+				$("#spellingBox").val("").focus();
+			}
+		}
+		step();
+	}
 	
 }
 
