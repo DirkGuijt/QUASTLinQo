@@ -29,7 +29,7 @@ $(document).ready(function () {
 
 function playSound(soundfile, callback) {
 	$("#dummy").html("").append(
-		$("<audio></audio>").attr('src', 'sound/'+soundfile).css('visibility', 'hidden').attr('autoplay', '1')
+		$("<audio></audio>").attr('src', soundDir+'/'+soundfile).css('visibility', 'hidden').attr('autoplay', '1')
 		.bind("ended", callback)
 	);
  }
