@@ -12,21 +12,21 @@ var active = {
 };
 
 var teams = [
-	"Q.U.A.S.T.",
-	"Apollo",
-	"Kielzog 9",
-	"Rood-zwart",
-	"Armenraad HIC",
-	"88 verkrachtig",
-	"CHaos",
-	"999",
-	"Krat",
-	"McClan",
-	"Bakgrens",
-	"OC 1",
-	"OC 2",
-	"TLC",
-	"OWB"
+	"MatCH",
+	"W3Cie",
+	"Beheer",
+	"Bestuur 56",
+	"BOA",
+	"MaCHazine",
+	"FlitCie",
+	"FaCie",
+	"CHipCie",
+	"ReisCie",
+	"WiFi",
+	"AkCie",
+	"SjaarCie",
+	"MeisCie",
+	"EPA"
 ];
 
 
